@@ -1,0 +1,82 @@
+/*
+ ============================================================================
+ Name        : ejercicio2-2.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+
+ Ejercicio 2-2: Ingresar números enteros, hasta que el usuario pida.
+  Mostrar:
+a) El promedio de los positivos y su mínimo.
+b) El promedio de los negativos y su máximo.
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	setbuf(stdout,NULL);
+
+	char respuesta = 's';
+	int numero;
+
+	int flagPositivo = 0;
+	int positivoMayor;
+	int acumuladorPositivos = 0;
+	float promedioPositivos;
+	int contadorPositivos = 0;
+
+	int flagNegativos = 0;
+	int negativoMayor;
+	int acumuladorNegativos = 0;
+	float promedioNegativos;
+	int contadorNegativos = 0;
+
+	do
+	{
+		printf("Ingrese un numero: ");
+		scanf("%d", &numero);
+
+		if(numero > 0)
+		{
+			if(flagNegativos == 0 || numero > positivoMayor )
+			{
+				positivoMayor = numero;
+				flagPositivo ++;
+			}
+		acumuladorPositivos = acumuladorPositivos + numero;
+		contadorPositivos ++;
+		}
+		else if(numero < 0)
+			{
+				if(flagPositivo == 0 || numero > negativoMayor )
+					{
+						negativoMayor = numero;
+						flagNegativos ++;
+					}
+				acumuladorNegativos = acumuladorNegativos + numero;
+				contadorNegativos ++;
+			}
+
+		printf("\nDesea seguir ingresando datos?s/n :");
+		fflush(stdin);
+		scanf("%c", &respuesta);
+		while(respuesta != 's' && respuesta != 'n')
+				{
+					printf("Error ingrese s/n");
+					fflush(stdin);
+					scanf("%c",&respuesta);
+				}
+
+	}while(respuesta == 's');
+
+	promedioPositivos = acumuladorPositivos/contadorPositivos;
+	promedioNegativos = acumuladorNegativos/contadorNegativos;
+
+	printf("\nel promedio de los positivos es %.2f", promedioPositivos);
+	printf("\nel promedio de los negativos es %.2f", promedioNegativos);
+
+	return 0;
+}

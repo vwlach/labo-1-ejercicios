@@ -1,0 +1,6 @@
+00:32:36 **** Incremental Build of configuration Debug for project ejercicio2-2 ****
+Info: Internal Builder is used for build
+gcc -o ejercicio2-2.exe "src\\ejercicio2-2.o" 
+
+00:32:36 Build Finished. 0 errors, 0 warnings. (took 132ms)
+

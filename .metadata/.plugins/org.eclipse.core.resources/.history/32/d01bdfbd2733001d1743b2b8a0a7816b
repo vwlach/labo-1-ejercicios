@@ -1,0 +1,89 @@
+/*
+ ============================================================================
+ Name        : desafiofunciones.c
+ Author      : valeria natalia wlach
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+
+ Desafío: Menú-Funciones y Bibliotecas
+
+Realizar un Menú que muestre las opciones:
+        a-Iniciar
+        b-Procesar
+        c-Finalizar
+        d-Salir
+Nota:
+-Antes de salir preguntar si "esta seguro que desea salir?s/n"
+-Si Procesa sin haber Iniciado, debe avisar "Debe Iniciar antes de Procesar" y no deja continuar
+-Si se Finaliza antes de Iniciar debe avisar "Debe Iniciar antes de Finalizar" y no deja continuar
+-Si se Finaliza antes de Procesar debe avisar "Debe Procesar antes de Finalizar" y no deja continuar
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "bibliotecamenu.h"
+
+
+int main(void)
+{
+	setbuf(stdout, NULL);
+	char letra;
+	char letraSalir;
+	//int banderaLetraAB = 0;
+	//int contadorLetraAB = 0;
+	int contadorLetraA = 0;
+
+	letra = muestroMenu();
+	fflush(stdin);
+	printf("Usted eligio la opcion %c.\n", letra);
+	fflush(stdin);
+
+	switch(letra)
+	{
+		case 'a':
+			printf("A - INICIANDO");
+			fflush(stdin);
+			contadorLetraA ++;
+			letra = muestroMenu();
+		break;
+
+		case 'b':
+			printf("B - PROCESANDO\n");
+
+			if(contadorLetraA < 1)
+			{
+				fflush(stdin);
+				printf("ERROR. Debe Iniciar antes de Procesar\n");
+
+				letra = muestroMenu();
+
+			}else
+			{
+
+				letra = muestroMenu();
+
+			}
+		break;
+
+		case 'c':
+			printf("C - FINALIZANDO\n");
+
+			letra = muestroMenu();
+
+		break;
+
+		case 'd':
+			printf("D - USTED ESTA POR SALIR\n");
+			printf("esta seguro que desea salir?s/n:  ");
+			fflush(stdin);
+			scanf("&c", &letraSalir);
+			void validacionSalir(opcionSalir);
+
+
+		break;
+
+		}
+	return EXIT_SUCCESS;
+}

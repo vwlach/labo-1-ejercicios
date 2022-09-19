@@ -1,0 +1,19 @@
+/*
+ ============================================================================
+Ejercicio 3-5: Realizar un programa en donde se puedan utilizar los prototipos de la
+función Restar en sus 4 combinaciones.
+ int Restar1(int, int);
+
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+s
+int main(void) {
+
+
+
+	return 0;
+}

@@ -1,0 +1,17 @@
+10:06:25 **** Incremental Build of configuration Debug for project prueba ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\biblio.o" "..\\src\\biblio.c" 
+..\src\biblio.c: In function 'validarSalir':
+..\src\biblio.c:29:6: warning: type of 'salir' defaults to 'int' [-Wimplicit-int]
+   29 | char validarSalir( salir)
+      |      ^~~~~~~~~~~~
+..\src\biblio.c:37:11: warning: format '%c' expects argument of type 'char *', but argument 2 has type 'int *' [-Wformat=]
+   37 |   scanf("%c", &salir);
+      |          ~^   ~~~~~~
+      |           |   |
+      |           |   int *
+      |           char *
+      |          %d
+gcc -o prueba.exe "src\\biblio.o" "src\\prueba.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file prueba.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status

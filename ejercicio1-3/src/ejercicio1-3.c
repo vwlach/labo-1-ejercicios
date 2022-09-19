@@ -1,0 +1,71 @@
+/*
+ ============================================================================
+ Name        : ejercicio1-3.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+
+ Ejercicio 1-3: ingresar 3 números y mostrar el número del medio,
+  sólo si existe. En
+caso de que no exista también informarlo.
+Ejemplo:
+1 5 3 el 3 es del medio-
+5 1 5 no hay número del medio-
+3 5 1 el 3 es del medio-
+3 1 5 el 3 es del medio
+5 3 1 el 3 es del medio
+
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	setbuf(stdout,NULL);
+
+	int num1;
+	int num2;
+	int num3;
+	int medio;
+
+	printf("Ingrese el primer numero:  \n");
+	scanf("%d", &num1);
+
+	printf("Ingrese el segundo numero:  \n");
+	scanf("%d", &num2);
+
+	printf("Ingrese el tercer numero:  \n");
+	scanf("%d", &num3);
+
+	printf("num1 es %d, num2 es %d y num3 es %d \n", num1, num2, num3);
+
+
+	if(num1 == num2 || num1 == num3 || num2== num1 || num2 == num3 || num3 == num1 || num3 == num2)
+	{
+		printf("No existe numero medio");
+	}
+	else{
+		if(num1> num2 && num1 < num3)
+		{
+			medio = num1;
+			printf("el mumero del medio es %d", medio);
+		}
+
+		if(num2< num1 && num2 > num3)
+		{
+			medio = num2;
+			printf("el mumero del medio es %d", medio);
+		}
+
+		if(num3> num2 && num3 < num1)
+		{
+			medio = num3;
+			printf("el mumero del medio es %d", medio);
+		}
+
+	}
+
+	return 0;
+}

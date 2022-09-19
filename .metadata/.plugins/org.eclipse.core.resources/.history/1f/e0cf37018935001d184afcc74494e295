@@ -1,0 +1,49 @@
+/*
+ * bibliotecamenu.c
+ *
+ *  Created on: 12 sep. 2022
+ *      Author: valeria w
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+char muestroMenu()
+{
+	char letra;
+	//char salir;
+
+
+		do{
+					printf(	"Menu\n"
+							"a-Iniciar\n"
+							"b-Procesar\n"
+							"c-Finalizar\n"
+							"d-Salir\n");
+
+					printf("\nIngrese una opcion: ");
+								fflush(stdin);
+								scanf("%c", &letra);
+			}while (letra == 'd'); // repite el codigo hasta q salga la opcopn s
+
+
+		return letra;
+}
+/*if(){
+				printf("esta seguro que desea salir?s/n: ");
+				fflush(stdin);
+				scanf("%c", &salir);
+						if(salir == 's')
+						{
+							printf("Usted esta saliendo");
+						}
+						else
+						{
+							muestroMenu();
+						}
+			}
+
+		return letra ;
+}
+
+*/

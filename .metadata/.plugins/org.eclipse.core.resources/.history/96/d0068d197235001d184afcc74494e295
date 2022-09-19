@@ -1,0 +1,15 @@
+/*
+ * bibliotecamenu.h
+ *
+ *  Created on: 12 sep. 2022
+ *      Author: blair
+ */
+
+#ifndef BIBLIOTECAMENU_H_
+#define BIBLIOTECAMENU_H_
+
+char muestroMenu();
+void validacionSalir(char opcionSalir);
+char	 iniciadorSwitch ();
+
+#endif /* BIBLIOTECAMENU_H_ */

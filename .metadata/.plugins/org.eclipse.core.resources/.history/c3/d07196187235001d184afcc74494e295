@@ -1,0 +1,108 @@
+/*
+ * bibliotecamenu.c
+ *
+ *  Created on: 12 sep. 2022
+ *      Author: blair
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+char muestroMenu()
+{
+	setbuf(stdout, NULL);
+
+		char opcion;
+		do{
+			printf("     MENU\na)iniciar\nb)procesar\nc)finalizar\nd)salir\nIngrese una opcion: ");
+			fflush(stdin);
+			scanf("%c",&opcion );
+
+			while(opcion !='a'&& opcion != 'b'&& opcion != 'c'&& opcion != 'd')
+			{
+				printf("Error, ingrese opcion correcta(a-b-c o d)");
+				fflush(stdin);
+				scanf("%c",&opcion );
+
+			}
+		}while (opcion == 'd');
+		fflush(stdin);
+		scanf("%c",&opcion );
+		return opcion;
+
+}
+void validacionSalir(char opcionSalir)
+{
+	char letra;
+
+		letra = muestroMenu();
+		fflush(stdin);
+		printf("Usted eligio la opcion %c.\n", letra);
+		fflush(stdin);
+
+	if (opcionSalir != 'n' && opcionSalir != 's')
+	{
+		printf("Error: ingrese opcion correcta (s /n): ");
+		fflush(stdin);
+		scanf("%c", &opcionSalir );
+	}
+
+		if(opcionSalir == 'n')
+		{
+			muestroMenu() ;
+		}
+		else
+		{
+			printf("Usted ha salido");
+		}
+	}
+ char	 iniciadorSwitch ();
+ {
+
+	 switch(letra)
+	 	{
+	 		case 'a':
+	 			printf("A - INICIANDO");
+	 			fflush(stdin);
+	 			contadorLetraA ++;
+	 			letra = muestroMenu();
+	 		break;
+
+	 		case 'b':
+	 			printf("B - PROCESANDO\n");
+
+	 			if(contadorLetraA < 1)
+	 			{
+	 				fflush(stdin);
+	 				printf("ERROR. Debe Iniciar antes de Procesar\n");
+
+	 				letra = muestroMenu();
+
+	 			}else
+	 			{
+
+	 				letra = muestroMenu();
+
+	 			}
+	 		break;
+
+	 		case 'c':
+	 			printf("C - FINALIZANDO\n");
+
+	 			letra = muestroMenu();
+
+	 		break;
+
+	 		case 'd':
+	 			printf("D - USTED ESTA POR SALIR\n");
+	 			printf("esta seguro que desea salir?s/n:  ");
+	 			fflush(stdin);
+	 			scanf("%c", &letraSalir);
+	 			validacionSalir(letraSalir);
+
+
+	 		break;
+
+	 		}
+
+ }

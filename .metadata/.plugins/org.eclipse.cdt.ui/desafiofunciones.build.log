@@ -1,0 +1,12 @@
+00:32:34 **** Rebuild of configuration Debug for project desafiofunciones ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\desafiofunciones.o" "..\\src\\desafiofunciones.c" 
+..\src\desafiofunciones.c: In function 'main':
+..\src\desafiofunciones.c:37:7: warning: variable 'salir' set but not used [-Wunused-but-set-variable]
+   37 |  char salir;
+      |       ^~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bibliotecamenu.o" "..\\src\\bibliotecamenu.c" 
+gcc -o desafiofunciones.exe "src\\bibliotecamenu.o" "src\\desafiofunciones.o" 
+
+00:32:35 Build Finished. 0 errors, 1 warnings. (took 393ms)
+
